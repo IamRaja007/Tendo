@@ -43,9 +43,8 @@ class SignUpFragment : Fragment() {
             override fun onClick(widget: View) {
                 // on clicking this string what will happen we have to define here
                 // in this case we want to send the user back to the previous activity
-//                val intent= Intent(this@OTPActivity,LoginActivity::class.java)
-//                startActivity(intent)
-//                finish()
+
+                //Implement the sign in logic here
                 Toast.makeText(requireContext(),"Touched",Toast.LENGTH_SHORT).show()
             }
         }
