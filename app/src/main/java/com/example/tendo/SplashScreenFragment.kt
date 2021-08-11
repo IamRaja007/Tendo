@@ -1,5 +1,6 @@
 package com.example.tendo
 
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -20,9 +21,13 @@ class SplashScreenFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Handler(Looper.getMainLooper()).postDelayed(
-            { findNavController().navigate(R.id.action_splashScreenFragment_to_viewPagerFragment) },
-            3000
+        Handler(Looper.getMainLooper()).postDelayed({
+                if (onBoardingFinished()){
+                    findNavController().navigate(R.id.action_splashScreenFragment_to_signUpFragment)
+                }else{
+                    findNavController().navigate(R.id.action_splashScreenFragment_to_viewPagerFragment)}
+
+            },1500
         )
 
         binding=DataBindingUtil.inflate(inflater,R.layout.fragment_splash_screen, container, false)
@@ -30,4 +35,8 @@ class SplashScreenFragment : Fragment() {
         return binding.root
     }
 
+    private fun onBoardingFinished(): Boolean{
+        val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        return sharedPref.getBoolean("Finished", false)
+    }
 }
