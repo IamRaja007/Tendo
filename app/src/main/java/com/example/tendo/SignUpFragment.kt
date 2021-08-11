@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat.getColor
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import com.example.tendo.databinding.FragmentSignUpBinding
 
 
@@ -54,5 +55,10 @@ class SignUpFragment : Fragment() {
         binding.tvAlreadyHaveAccount.text=span
     }
 
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btnSignUp.setOnClickListener {
+            findNavController().navigate(R.id.action_signUpFragment_to_accountActivationFragment)
+        }
+    }
 }

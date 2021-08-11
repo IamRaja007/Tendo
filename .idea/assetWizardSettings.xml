@@ -28,8 +28,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_baseline_arrow_forward_24" />
-                            <entry key="sourceFile" value="C:\Users\rajab\Desktop\chatApp\iPhone 11 Pro\iPhone 11 Pro\ic_sparkle_header.svg" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_notification_white" />
+                            <entry key="sourceFile" value="C:\Users\rajab\Desktop\chatApp\iPhone 11 Pro\iPhone 11 Pro\Group 2102.svg" />
                           </map>
                         </option>
                       </PersistentState>
